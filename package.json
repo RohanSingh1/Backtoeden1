@@ -1,0 +1,27 @@
+{
+  "name": "gulp-template",
+  "version": "1.0.0",
+  "description": "default template",
+  "main": "gulpfile.js",
+  "dependencies": {
+      "autoprefixer": "^10.4.20",
+      "gulp": "^4.0.0",
+      "gulp-autoprefixer": "^9.0.0",
+      "gulp-clean-css": "^4.0.0",
+      "gulp-concat": "^2.6.1",
+      "gulp-imagemin": "^5.0.3",
+      "gulp-plumber": "^1.2.1",
+      "gulp-postcss": "^10.0.0",
+      "gulp-sass": "^5.1.0",
+      "gulp-uglify": "^3.0.2",
+      "gulp-watch": "^5.0.1"
+  },
+  "devDependencies": {
+      "sass": "^1.78.0"
+  },
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

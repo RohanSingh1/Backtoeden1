@@ -1,0 +1,83 @@
+@use "../abstracts" as *;
+
+.banner {
+    --swiper-navigation-size: 20px;
+    --swiper-navigation-sides-offset: 12px;
+    position: relative;
+
+    @include mq(medium) {
+        --swiper-navigation-sides-offset: 45px;
+    }
+
+    @include mq(desktop) {
+        --swiper-navigation-sides-offset: 0;
+    }
+
+    .overlap {
+        width: 100%;
+        align-items: center;
+    }
+
+    &__image {
+        img {
+            width: 100%;
+            aspect-ratio: 393/343;
+            object-fit: cover;
+
+            @include mq(medium) {
+                aspect-ratio: 180/61;
+            }
+        }
+    }
+
+    &__content {
+        width: 100%;
+        padding-inline: 60px;
+        color: $color-white;
+        text-align: left;
+
+        @include mq(medium) {
+            padding-inline: 110px;
+        }
+
+        @include mq(large) {
+            max-width: 56%;
+        }
+    }
+
+    &__title {
+        font-size: 29px;
+        line-height: 1;
+        font-weight: 500;
+        margin-bottom: 23px;
+
+        @include mq(medium) {
+            font-size: 49px;
+        }
+    }
+
+    .button-wrapper {
+        display: flex;
+        gap: 12px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: $color-white;
+    }
+
+    .swiper-button-wrap {
+        position: relative;
+    }
+
+    .content-wrapper,
+    .swiper-button-wrap {
+
+        @include mq(desktop) {
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+    }
+
+}

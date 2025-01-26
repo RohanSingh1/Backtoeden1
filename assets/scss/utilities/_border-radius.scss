@@ -1,0 +1,7 @@
+@use "../abstracts" as *;
+
+@each $name, $value in $radius {
+    .border-radius-#{$name} {
+        border-radius: #{$value};
+    }
+}

@@ -1,0 +1,241 @@
+@use "../abstracts/" as *;
+
+.header {
+
+    .flex {
+        --_gap: var(--gap, 18px);
+        display: flex;
+        align-items: center;
+        gap: var(--_gap);
+    }
+
+    .site-title {
+        display: none; // Remove this if site-title is required
+    }
+
+    .container {
+        --max-width: 1212px;
+
+        @include mq(large) {
+            --padding: 226px;
+        }
+    }
+}
+
+.header {
+    font-family: $font-family-secondary;
+    font-weight: $font-weight-500;
+    line-height: 1;
+    color: $color-main-dark;
+    background-color: $color-cream;
+
+    &__wrapper {
+        padding-block: 24px;
+
+        @include mq(medium) {
+            padding-block: 29px;
+        }
+
+        &.flex {
+            justify-content: space-between;
+        }
+    }
+
+    &__left {
+        &.flex {
+            --gap: 44px;
+        }
+    }
+
+    &__right {
+        .cart {
+            a {
+                text-decoration: none;
+            }
+            .cart-link {
+                position: relative;
+                display: inline-block;
+            }
+            .cart-count {
+                position: absolute;
+                top: -13px;
+                right: -15px;
+                font-size: 12px;
+                font-weight: bold;
+                padding: 3px 6px;
+                background-color: $color-green;
+                color: $color-white;
+                border-radius: 55%;
+                min-width: 20px;
+                text-align: center;
+            }
+        }
+        
+        .logout {
+            a {
+                text-decoration: none;
+            }
+        }
+
+        .sign-in-btn .btn {
+            --btn-padding: 13px 12px;
+            --btn-font-size: 1rem;
+        }
+    }
+
+    .primary-menu {
+        list-style: none;
+
+        &.flex {
+            --gap: 18px;
+        }
+
+        a {
+            text-decoration: none;
+            word-break: normal;
+            word-wrap: normal;
+            display: block;
+        }
+
+        .icon {
+            display: block;
+            height: 7px;
+            position: absolute;
+            pointer-events: none;
+            transform: rotate(-45deg);
+            width: 13px;
+
+            &::before,
+            &::after {
+                content: "";
+                display: block;
+                background-color: currentColor;
+                position: absolute;
+                bottom: calc(50% - 0.1rem);
+                left: 0;
+            }
+
+            &::before {
+                height: 8px;
+                width: 2px;
+            }
+
+            &::after {
+                height: 2px;
+                width: 8px;
+            }
+        }
+
+        li {
+            position: relative;
+
+            &>.icon {
+                right: -5px;
+                top: calc(50% - 5px);
+            }
+
+            &.menu-item-has-children {
+                &>a {
+                    padding-inline-end: 20px;
+                }
+
+                &:hover>ul,
+                &:focus>ul,
+                &.focus {
+                    left: 0;
+                    opacity: 1;
+                    transform: translateY(0);
+                    transition: opacity 0.15s linear, transform 0.15s linear;
+                }
+            }
+
+            &.current-menu-item {
+
+                a,
+                .icon {
+                    color: $color-green;
+                }
+            }
+        }
+
+        ul {
+            list-style: none;
+            background-color: $color-cream;
+            border-radius: $border-radius-5;
+            opacity: 0;
+            padding: 10px 0;
+            position: absolute;
+            right: 9999rem;
+            top: calc(100% + 10px);
+            transition: opacity 0.15s linear, transform 0.15s linear, left 0s 0.15s;
+            transform: translateY(0.6rem);
+            width: 200px;
+            z-index: 2;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                height: 10px;
+                left: 0;
+                right: 0;
+                bottom: 100%;
+            }
+
+            a {
+                padding: 10px 20px;
+            }
+
+            li.menu-item-has-children {
+                .icon {
+                    position: absolute;
+                    right: 15px;
+                    top: calc(50% - 5px);
+                }
+            }
+        }
+
+        ul {
+            ul {
+                top: -10px;
+
+                &::before {
+                    bottom: 0;
+                    height: auto;
+                    right: auto;
+                    left: -10px;
+                    top: 0;
+                    width: 10px;
+                }
+            }
+
+            li.menu-item-has-children {
+
+                &:hover>ul,
+                &:focus>ul,
+                &.focus>ul {
+                    left: calc(100% + 10px);
+                }
+            }
+        }
+    }
+}
+
+#site-header {
+    position: relative;
+    width: 100%;
+    transition: top 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+  
+.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+  
+.hidden {
+    top: -110px;
+}

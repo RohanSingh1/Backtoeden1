@@ -1,0 +1,27 @@
+$colors: (
+    color-white: #ffffff,
+    color-off-white: rgb(246, 246, 246),
+    color-green: rgb(49, 130, 43),
+    color-cream: rgb(238, 237, 231),
+    color-black: #000000,
+    color-main-dark: rgb(50, 55, 57),
+    color-main-dark-80: rgba(50, 55, 57, 0.8),
+    color-main-dark-40: rgba(50, 55, 57, 0.4),
+    color-light-dark: rgb(38, 38, 38),
+    color-light-dark-90: rgba(38, 38, 38, 0.9),
+    color-light-dark-60: rgba(38, 38, 38, 0.6),
+    color-gray: rgb(212, 212, 212),
+);
+
+$color-white: var(--color-white);
+$color-off-white: var(--color-off-white);
+$color-green: var(--color-green);
+$color-cream: var(--color-cream);
+$color-black: var(--color-black);
+$color-main-dark: var(--color-main-dark);
+$color-main-dark-80: var(--color-main-dark-80);
+$color-main-dark-40: var(--color-main-dark-40);
+$color-light-dark: var(--color-light-dark);
+$color-light-dark-90: var(--color-light-dark-90);
+$color-light-dark-60: var(--color-light-dark-60);
+$color-gray: var(--color-gray);

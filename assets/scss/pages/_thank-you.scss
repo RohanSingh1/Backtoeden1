@@ -1,0 +1,19 @@
+@use "../abstracts/" as *;
+
+.thank-you {
+    &.overlap {
+        align-items: center;
+    }
+
+    .form {
+        &__wrapper {
+            margin-block-start: 278px;
+            margin-block-end: 278px;
+
+            @include mq(large) {
+                margin-block-start: 245px;
+                margin-block-end: 245px;
+            }
+        }
+    }
+}

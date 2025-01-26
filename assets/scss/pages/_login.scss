@@ -1,0 +1,51 @@
+@use "../abstracts/" as *;
+
+.login {
+    &.overlap {
+        align-items: center;
+    }
+
+    &__bg-img img {
+        max-height: 800px;
+    }
+
+    .form {
+        z-index: 9;
+
+        &__wrapper {
+            margin-block-start: 132px;
+            margin-block-end: 132px;
+
+            @include mq(large) {
+                margin-block-start: 168px;
+                margin-block-end: 138px;
+            }
+        }
+
+        &__footer {
+
+            &.flex {
+                --gap: 14px 23px;
+                justify-content: center;
+
+                @include mq(medium) {
+                    justify-content: flex-start;
+                }
+            }
+
+            p {
+                font-size: 0.8125rem;
+            }
+        }
+    }
+
+    .forgot-link {
+        text-align: center;
+        margin-block-start: 12px;
+        font-size: 0.8125rem;
+
+        @include mq(medium) {
+            text-align: right;
+        }
+    }
+}

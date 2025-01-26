@@ -1,0 +1,9 @@
+@use "../abstracts/" as *;
+
+.font-family-base {
+    font-family: $font-family-primary;
+}
+
+.font-family-heading {
+    font-family: $font-family-secondary;
+}

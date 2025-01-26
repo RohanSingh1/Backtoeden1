@@ -1,0 +1,35 @@
+@use "../abstracts/" as *;
+
+.signup {
+    &.overlap {
+        align-items: center;
+    }
+
+    .form {
+        z-index: 9;
+        
+        &__wrapper {
+            margin-block-start: 88px;
+            margin-block-end: 88px;
+
+            @include mq(large) {
+                margin-block-start: 48px;
+                margin-block-end: 48px;
+            }
+        }
+
+        .wholesale-checkbox {
+            margin-block-start: 12px;
+        }
+
+        .wholesale-checkbox.flex {
+            --gap: 10px;
+        }
+
+        &__footer {
+            &.flex {
+                justify-content: flex-end;
+            }
+        }
+    }
+}

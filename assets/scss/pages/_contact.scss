@@ -1,0 +1,217 @@
+@use "../abstracts/" as *;
+
+.contact-form {
+    &.overlap {
+        align-items: center;
+    }
+
+    .form {
+        &__wrapper {
+            margin-block-start: 64px;
+            margin-block-end: 64px;
+
+            @include mq(large) {
+                padding: 49px;
+                margin-block-start: 102px;
+                margin-block-end: 102px;
+            }
+
+            &.container {
+                --max-width: 1216px;
+            }
+        }
+
+        &__title {
+            margin-block-end: 23px
+        }
+
+        &__sub-title {
+            font-size: 1.25rem;
+            line-height: 1;
+            margin-block-end: 23px;
+
+            @include mq(large) {
+                font-size: 1.8125rem;
+            }
+        }
+
+        &__main {
+            margin-block-end: 23px;
+            padding-block-end: 23px;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.4);
+
+            @include mq(medium) {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+        }
+    }
+
+    &__flex {
+        display: flex;
+        flex-direction: column;
+
+        @include mq(medium) {
+            flex-direction: row;
+            gap: 42px;
+        }
+
+        @include mq(large) {
+            gap: 84px;
+        }
+    }
+
+    &__main {
+        width: min(100%, 611px);
+    }
+
+    &__details {
+        width: min(100%, 423px);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        @include mq(medium) {
+            gap: 30px;
+            font-size: 1.25rem;
+            grid-template-columns: auto;
+            grid-template-rows: max-content;
+        }
+
+        @include mq(large) {
+            gap: 62px;
+            padding: 8px 43px;
+        }
+
+        h4 {
+            margin-block-end: 18px;
+            font-size: 1rem;
+            line-height: 1;
+
+            @include mq(medium) {
+                font-size: 1.25rem;
+            }
+
+            @include mq(large) {
+                font-size: 1.8125rem;
+                margin-block-end: 23px;
+            }
+        }
+        
+        p {
+            font-size: 12px;
+
+            @include mq(medium) {
+                font-size: 1rem;
+            }
+        }
+
+        .location {
+            font-size: 0.75rem;
+
+            @include mq(medium) {
+                font-size: 1rem;
+            }
+
+            @include mq(large) {
+                font-size: 1.25rem;
+            }
+        }
+
+        .location+.location {
+            margin-block-start: 30px;
+        }
+    }
+}
+
+.contact-form {
+    &.overlap {
+        align-items: center;
+    }
+
+    .gform_title {
+        margin-block-end: 23px;
+        font-weight: 400;
+        font-size: clamp(1.8125rem, 1.5779rem + .9551vw, 2.4375rem);
+    }
+
+    .gform_description {
+        font-size: 1.25rem;
+        line-height: 1;
+        margin-block-end: 23px;
+        font-family: $font-family-secondary;
+        font-weight: 500;
+
+
+        @include mq(large) {
+            font-size: 1.8125rem;
+        }
+    }
+    .gform-theme--framework {
+
+        .gform_fields {
+            row-gap: 23px !important;
+        }
+        .gform-grid-row {
+            row-gap: 23px !important;
+        }
+        #gform_2 {
+            margin-block-end: 23px;
+            padding-block-end: 23px;
+            border-bottom: 1px solid rgba(17, 17, 17, 0.4);
+
+            @include mq(medium) {
+                margin: 0;
+                padding: 0;
+                border: 0;
+            }
+            input:not(.button), select {
+                font-size: .8125rem;
+                font-weight: 400;
+                color: var(--color-main-dark);
+                background-color: var(--color-off-white);
+                padding: 16px 10px;
+                border: 1px solid var(--color-light-dark);
+                border-radius: 10px;
+                height: 56px;
+
+                @include mq(medium) {
+                    font-size: 1rem;
+                    background-color: $color-white;
+                }
+            }
+
+            select {
+                padding: 6px 10px;
+            }
+
+            .gform_button {
+                --_btn-background-color: var(--btn-background-color, #{$color-main-dark});
+                --_btn-color: var(--btn-color, #{$color-white});
+                --_btn-padding: var(--btn-padding, 18px 14px);
+                --_btn-font-size: var(--btn-font-size, 1.25rem);
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+    
+                font-size: var(--_btn-font-size);
+                font-family: $font-family-secondary;
+                line-height: 1;
+                padding: var(--_btn-padding);
+                border: 0;
+                border-radius: $border-radius-5;
+                text-decoration: none;
+                color: var(--_btn-color);
+                background-color: var(--_btn-background-color);
+                cursor: pointer;
+                transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+                
+                &--white {
+                    --btn-background-color: #{$color-white};
+                    --btn-color: #{$color-main-dark};
+                }
+            }
+        }        
+    }
+}

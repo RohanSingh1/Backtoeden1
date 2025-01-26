@@ -1,0 +1,282 @@
+@use "../abstracts/" as *;
+
+.woocommerce-checkout.woocommerce-page {
+    .woocommerce {
+        width: min(100% - 24px, 1001px);
+        margin-inline: auto;
+
+        padding-block: 40px;
+
+        @include mq(medium) {
+            padding-block: 90px;
+        }
+    }
+}
+
+.woocommerce-checkout.woocommerce-page {
+    form.checkout {
+        .col2-set {
+            .col-1 {
+                @include mq(medium) {
+                    width: 56.14%;
+                }
+
+                h3 {
+                    padding-block-end: 20px;
+
+                    @include mq(large) {
+                        padding-block-end: 30px;
+                    }
+                }
+            }
+
+            .col-2 {
+                @include mq(medium) {
+
+                    width: 40.36%;
+                }
+
+                @include mq(large) {
+                    padding: 16px;
+                }
+
+                h3 {
+                    padding-block-end: 18px;
+                }
+            }
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: 500;
+            color: $color-main-dark;
+
+        }
+    }
+
+    .button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        font-size: 1rem;
+        font-family: $font-family-secondary;
+        line-height: 1;
+        padding: 18px 14px;
+        border: 0;
+        border-radius: $border-radius-5;
+        text-decoration: none;
+        color: $color-white;
+        background-color: $color-green;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    }
+
+    textarea[name="order_comments"] {
+        border: 1px solid $color-light-dark;
+        border-radius: 10px;
+        padding: 16px 10px;
+    }
+
+    .woocommerce-shipping-fields {
+        h3 {
+            border-bottom: 1px solid $color-main-dark-40;
+            margin-block: 30px;
+            line-height: 1;
+        }
+
+        .woocommerce-form__label-for-checkbox {
+            font-weight: 400;
+            font-size: 13px;
+        }
+    }
+
+    .woocommerce-additional-fields {
+        padding-block-end: 30px;
+        margin-block-end: 30px;
+        border-bottom: 1px solid $color-main-dark-40;
+
+        @include mq(medium) {
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
+    }
+
+    .shop_table {
+        border: 0;
+        display: grid;
+        margin-block-end: 30px;
+        padding-block-end: 30px;
+        border-bottom: 1px solid $color-main-dark-40;
+
+        thead {
+            display: none;
+        }
+
+        th,
+        td {
+            border: 0;
+            padding: 0;
+        }
+
+        tbody {
+            margin-block-end: 18px;
+            padding-block-end: 18px;
+            border-bottom: 1px solid $color-main-dark-40;
+            display: inline-block;
+
+            .woocommerce-Price-amount {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .product-quantity {
+                font-size: 16px;
+                font-weight: 700;
+            }
+
+            .product-name {
+                font-size: 13px;
+                font-weight: 600;
+                margin-inline-end: 16px;
+                max-width: 212px;
+            }
+        }
+
+
+        tfoot {
+            tr {
+                display: flex;
+                justify-content: space-between;
+            }
+
+            tr:not(.order-total) {
+                font-size: 14px;
+                font-weight: 400;
+
+                td {
+                    font-size: 14px;
+                    font-weight: 400;
+
+                    label {
+                        font-size: 14px;
+                    }
+                }
+
+                &+tr:not(.order-total) {
+                    margin-block-start: 8px;
+                }
+            }
+
+            .order-total {
+                color: $color-green;
+                font-size: 20px;
+                font-weight: 500;
+                margin-block-start: 18px;
+                padding-block-start: 18px;
+                border-top: 1px solid $color-main-dark-40;
+            }
+        }
+
+        .cart_item {
+            display: flex;
+            justify-content: space-between;
+
+            &+.cart_item {
+                margin-block-start: 10px;
+            }
+        }
+
+
+    }
+
+    #payment {
+        ul#shipping_method {
+            margin-bottom: 20px;
+            
+            li label {
+                font-size: 16px;
+            }
+        }
+
+        background: transparent;
+
+        .wc_payment_methods {
+            padding: 0 0 16px 0;
+            margin-block-end: 16px;
+
+            label {
+                font-size: 16px;
+                font-weight: 700;
+
+                img {
+                    display: inline;
+                }
+            }
+
+            label[for="wc-stripe-new-payment-method"] {
+                font-size: 14px;
+                font-weight: 400;
+            }
+
+            li+li {
+                margin-block-start: 18px;
+            }
+        }
+
+        .payment_box {
+            padding: 0;
+            margin: 0;
+            background: transparent;
+
+            &::before {
+                content: none;
+            }
+
+            fieldset {
+                border: 0;
+                margin-block-start: 8px;
+            }
+        }
+
+        .place-order {
+            padding: 0;
+        }
+
+        button[name="woocommerce_checkout_place_order"] {
+            margin-block-start: 20px;
+            width: 100%;
+            background-color: $color-main-dark;
+
+            &:hover {
+                color: $color-green;
+            }
+        }
+    }
+}
+
+.woocommerce-page {
+    .select2-container {
+        .select2-selection--single {
+            height: auto;
+
+            .select2-selection__rendered {
+                padding: 13px 10px;
+
+            }
+        }
+    }
+
+    .select2-container--default {
+        .select2-selection--single {
+            border-color: $color-light-dark;
+            border-radius: 10px;
+
+            .select2-selection__arrow {
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+    }
+}

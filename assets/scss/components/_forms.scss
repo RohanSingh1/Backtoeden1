@@ -1,0 +1,117 @@
+@use "../abstracts/" as *;
+
+
+label {
+    color: $color-main-dark;
+    font-size: 13px;
+}
+
+input:not(.button),
+select {
+    font-size: 0.8125rem;
+    font-weight: $font-weight-400;
+    color: $color-main-dark;
+    background-color: $color-off-white;
+    padding: 16px 10px;
+    border: 1px solid $color-light-dark;
+    border-radius: $border-radius-10;
+
+    @include mq(medium) {
+        font-size: 1rem;
+        background-color: $color-white;
+    }
+}
+
+select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='16' height='10' viewBox='0 0 16 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15 1.07376L8.0001 8.07373L1.00012 1.07376' stroke='%23313638' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-position: right 0.7rem top 50%;
+    background-size: 14px auto;
+}
+
+::placeholder {
+    color: $color-main-dark;
+    font-weight: $font-weight-400;
+    font-family: $font-family-primary;
+    font-size: 0.8125rem;
+
+    @include mq(medium) {
+        font-size: 1rem;
+    }
+}
+
+.form {
+
+    .form-group {
+        display: grid;
+    }
+
+    hr {
+        border: none;
+        border-block-start: 0.5px solid rgba(17, 17, 17, 0.4);
+    }
+
+    &__grid {
+        --_gap: var(--gap, 23px);
+
+        display: grid;
+        gap: var(--_gap);
+    }
+    
+    &__step {
+        --_gap: var(--gap, 23px);
+
+        display: none;
+        gap: var(--_gap); 
+        
+        &.active{
+            display: grid;
+        }
+    }
+
+    &__wrapper {
+        padding-block: 30px;
+        padding-inline: 18px;
+
+        @include mq(large) {
+            padding-block: 40px;
+            padding-inline: 40px;
+        }
+
+        &.container {
+            --max-width: 652px;
+            --padding: 24px;
+        }
+    }
+
+    &__title {
+        font-size: clamp(1.8125rem, 1.5779rem + 0.9551vw, 2.4375rem);
+        line-height: 1;
+        margin-block-end: 14px;
+
+        @include mq(medium) {
+            margin-block-end: 23px;
+        }
+    }
+
+    &__desc {
+        font-size: clamp(0.8125rem, 0.5781rem + 0.75vw, 1rem);
+        margin-block-end: 23px;
+    }
+
+    &__footer {
+        margin-block-start: 23px;
+    }
+
+    .btn {
+        --btn-padding: 14px 30px;
+        --btn-font-size: 1rem;
+
+        width: 100%;
+
+        @include mq(medium) {
+            width: auto;
+        }
+    }
+}

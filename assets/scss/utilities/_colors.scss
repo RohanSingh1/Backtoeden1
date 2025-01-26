@@ -1,0 +1,14 @@
+@use "../abstracts" as *;
+
+@each $name, $value in $colors {
+
+    // Background color classes
+    .bg-#{$name} {
+        background-color: #{$value};
+    }
+
+    // Text color classes
+    .text-#{$name} {
+        color: #{$value};
+    }
+}

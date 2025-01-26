@@ -1,0 +1,39 @@
+@use "../abstracts/" as *;
+
+.btn,
+.woocommerce-Button {
+    --_btn-background-color: var(--btn-background-color, #{$color-main-dark});
+    --_btn-color: var(--btn-color, #{$color-white});
+    --_btn-padding: var(--btn-padding, 18px 14px);
+    --_btn-font-size: var(--btn-font-size, 1.25rem);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: var(--_btn-font-size);
+    font-family: $font-family-secondary;
+    line-height: 1;
+    padding: var(--_btn-padding);
+    border: 0;
+    border-radius: $border-radius-5;
+    text-decoration: none;
+    color: var(--_btn-color);
+    background-color: var(--_btn-background-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, filter 0.3s ease-in-out;
+
+    &--white {
+        --btn-background-color: #{$color-white};
+        --btn-color: #{$color-main-dark};
+    }
+
+    &--green {
+        --btn-background-color: #{$color-green};
+    }
+
+    &--outline {
+        --btn-background-color: transparent;
+        border: 1px solid #{$color-white};
+    }
+
+}
